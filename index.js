@@ -83,7 +83,7 @@ class Logger {
 
   /**
    * Output log at DEBUG level, which is a debug level.
-   * @method trace
+   * @method debug
    * @param  {any} msg Log message.
    * @instance
    * @memberof Logger
@@ -96,7 +96,7 @@ class Logger {
 
   /**
    * Output log at INFO level, which is a production level.
-   * @method trace
+   * @method info
    * @param  {any} msg Log message.
    * @instance
    * @memberof Logger
@@ -107,7 +107,7 @@ class Logger {
 
   /**
    * Output log at WARN level, which is a production level.
-   * @method trace
+   * @method warn
    * @param  {any} msg Log message.
    * @instance
    * @memberof Logger
@@ -170,12 +170,12 @@ class Logger {
 
 /**
  * Get logger instance. supprted options are as below.<br>
- * -debug: true / false
- * -toFile: true / false
- * -outDir: directory to output log file, by default it is "./log/"
- * -rotate: function to check when to rotate log file, should return true / false.
- * -generation: log files to keep on disk
- * -ts: timestamp format in YYYYMMDDhhmmsszzz format
+ * -debug: true / false<br>
+ * -toFile: true / false<br>
+ * -outDir: directory to output log file, by default it is "./log/"<br>
+ * -rotate: function to check when to rotate log file, should return true / false<br>
+ * -generation: log files to keep on disk<br>
+ * -ts: timestamp format in YYYYMMDDhhmmsszzz format<br>
  *
  * @method getLogger
  * @param  {option}  desc Logger option.

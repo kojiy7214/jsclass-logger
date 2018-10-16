@@ -119,9 +119,9 @@ output log anytime.
 -debug: true / false<br>
 -toFile: true / false<br>
 -outDir: directory to output log file, by default it is &quot;./log/&quot;<br>
--rotate: function to check when to rotate log file, should return true / false.<br>
+-rotate: function to check when to rotate log file, should return true / false<br>
 -generation: log files to keep on disk<br>
--ts: timestamp format in YYYYMMDDhhmmsszzz format</p><br>
+-ts: timestamp format in YYYYMMDDhhmmsszzz format<br></p>
 </dd>
 </dl>
 
@@ -138,15 +138,15 @@ Logger class.
 **Kind**: global class  
 
 * [Logger](#Logger)
-    * [.trace(msg)](#Logger+trace)
-    * [.trace(msg)](#Logger+trace)
-    * [.trace(msg)](#Logger+trace)
+    * [.debug(msg)](#Logger+debug)
+    * [.info(msg)](#Logger+info)
+    * [.warn(msg)](#Logger+warn)
     * [.trace(msg)](#Logger+trace)
     * [.error(msg)](#Logger+error)
 
-<a name="Logger+trace"></a>
+<a name="Logger+debug"></a>
 
-### logger.trace(msg)
+### logger.debug(msg)
 Output log at DEBUG level, which is a debug level.
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -155,9 +155,9 @@ Output log at DEBUG level, which is a debug level.
 | --- | --- | --- |
 | msg | <code>any</code> | Log message. |
 
-<a name="Logger+trace"></a>
+<a name="Logger+info"></a>
 
-### logger.trace(msg)
+### logger.info(msg)
 Output log at INFO level, which is a production level.
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -166,9 +166,9 @@ Output log at INFO level, which is a production level.
 | --- | --- | --- |
 | msg | <code>any</code> | Log message. |
 
-<a name="Logger+trace"></a>
+<a name="Logger+warn"></a>
 
-### logger.trace(msg)
+### logger.warn(msg)
 Output log at WARN level, which is a production level.
 
 **Kind**: instance method of [<code>Logger</code>](#Logger)  
@@ -206,7 +206,7 @@ Get logger instance. supprted options are as below.<br>
 -debug: true / false<br>
 -toFile: true / false<br>
 -outDir: directory to output log file, by default it is "./log/"<br>
--rotate: function to check when to rotate log file, should return true / false.<br>
+-rotate: function to check when to rotate log file, should return true / false<br>
 -generation: log files to keep on disk<br>
 -ts: timestamp format in YYYYMMDDhhmmsszzz format<br>
 
