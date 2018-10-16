@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/kojiy7214/jsclass-logger.svg?branch=master)](https://travis-ci.org/kojiy7214/jsclass-logger)
+
 # jsclass-logger
 Logger which works perfectly both in production/debug environment.
 
