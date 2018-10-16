@@ -182,6 +182,7 @@ class Logger {
  * @return {Logger}       Logger instance
  */
 function getLogger(desc) {
+  desc = desc || {};
   Logger.debug = desc.debug || Logger.debug;
   Logger.toFile = desc.toFile || Logger.toFile;
   Logger.outDir = desc.outDir || Logger.outDir;
