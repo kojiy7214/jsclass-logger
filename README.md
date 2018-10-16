@@ -116,12 +116,12 @@ output log anytime.
 <dl>
 <dt><a href="#getLogger">getLogger(desc)</a> ⇒ <code><a href="#Logger">Logger</a></code></dt>
 <dd><p>Get logger instance. supprted options are as below.<br>
--debug: true / false
--toFile: true / false
--outDir: directory to output log file, by default it is &quot;./log/&quot;
--rotate: function to check when to rotate log file, should return true / false.
--generation: log files to keep on disk
--ts: timestamp format in YYYYMMDDhhmmsszzz format</p>
+-debug: true / false<br>
+-toFile: true / false<br>
+-outDir: directory to output log file, by default it is &quot;./log/&quot;<br>
+-rotate: function to check when to rotate log file, should return true / false.<br>
+-generation: log files to keep on disk<br>
+-ts: timestamp format in YYYYMMDDhhmmsszzz format</p><br>
 </dd>
 </dl>
 
@@ -203,12 +203,12 @@ Output log at ERROR level, which is a production level.
 
 ## getLogger(desc) ⇒ [<code>Logger</code>](#Logger)
 Get logger instance. supprted options are as below.<br>
--debug: true / false
--toFile: true / false
--outDir: directory to output log file, by default it is "./log/"
--rotate: function to check when to rotate log file, should return true / false.
--generation: log files to keep on disk
--ts: timestamp format in YYYYMMDDhhmmsszzz format
+-debug: true / false<br>
+-toFile: true / false<br>
+-outDir: directory to output log file, by default it is "./log/"<br>
+-rotate: function to check when to rotate log file, should return true / false.<br>
+-generation: log files to keep on disk<br>
+-ts: timestamp format in YYYYMMDDhhmmsszzz format<br>
 
 **Kind**: global function  
 **Returns**: [<code>Logger</code>](#Logger) - Logger instance  
