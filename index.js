@@ -4,7 +4,9 @@ const fs = require("fs");
  * Logger class.
  */
 class Logger {
-  constructor() {}
+  constructor(mod) {
+    this.mod = mod;
+  }
 
   static dataFormatter(date, format) {
     return format.replace(/YYYY/, date.getFullYear()).
@@ -72,7 +74,7 @@ class Logger {
     let timestamp = Logger.dataFormatter(new Date(), Logger.ts);
     let lineinfo = Logger.getLineInfo() + " ";
 
-    let log_content = timestamp + prefix + lineinfo + msg + "\n";
+    let log_content = timestamp + prefix + " (" + this.mod + "/" + lineinfo + msg;
     if (Logger.toFile) {
       let file = Logger.getFile();
       fs.appendFileSync(file, log_content, "utf8", (error) => {});
@@ -136,7 +138,7 @@ class Logger {
 
     let firstline = lines[0];
     let index = firstline.lastIndexOf("/");
-    return "(" + firstline.substr(index + 1);
+    return firstline.substr(index + 1);
   }
 
   /**
@@ -181,7 +183,7 @@ class Logger {
  * @param  {option}  desc Logger option.
  * @return {Logger}       Logger instance
  */
-function getLogger(desc) {
+function getLogger(mod, desc) {
   desc = desc || {};
   Logger.debug = desc.debug || Logger.debug;
   Logger.toFile = desc.toFile || Logger.toFile;
@@ -190,7 +192,7 @@ function getLogger(desc) {
   Logger.generation = desc.generation || Logger.generation;
   Logger.ts = desc.ts || Logger.ts || "YYYY-MM-DD hh:mm:ss.zzz";
 
-  return new Logger();
+  return new Logger(mod);
 }
 
 /**
