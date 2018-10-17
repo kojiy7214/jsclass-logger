@@ -180,10 +180,11 @@ class Logger {
  * -ts: timestamp format in YYYYMMDDhhmmsszzz format<br>
  *
  * @method getLogger
- * @param  {option}  desc Logger option.
+ * @param  {option}  desc Logger option
+ * @param  {option}  mod modulename to output
  * @return {Logger}       Logger instance
  */
-function getLogger(mod, desc) {
+function getLogger(desc, mod) {
   desc = desc || {};
   Logger.debug = desc.debug || Logger.debug;
   Logger.toFile = desc.toFile || Logger.toFile;

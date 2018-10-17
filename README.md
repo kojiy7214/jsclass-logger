@@ -14,6 +14,9 @@ let logger;
 // setup logger for production output
 logger = require("jsclass-logger")();
 
+// setup logger to output log with module name
+logger = require("jsclass-logger")({}, "your_module_name");
+
 // setup logger for development output
 logger = require("jsclass-logger")({"debug":true});
 
@@ -114,7 +117,7 @@ output log anytime.
 ## Functions
 
 <dl>
-<dt><a href="#getLogger">getLogger(desc)</a> ⇒ <code><a href="#Logger">Logger</a></code></dt>
+<dt><a href="#getLogger">getLogger(desc, mod)</a> ⇒ <code><a href="#Logger">Logger</a></code></dt>
 <dd><p>Get logger instance. supprted options are as below.<br>
 -debug: true / false<br>
 -toFile: true / false<br>
@@ -201,7 +204,7 @@ Output log at ERROR level, which is a production level.
 
 <a name="getLogger"></a>
 
-## getLogger(desc) ⇒ [<code>Logger</code>](#Logger)
+## getLogger(desc, mod) ⇒ [<code>Logger</code>](#Logger)
 Get logger instance. supprted options are as below.<br>
 -debug: true / false<br>
 -toFile: true / false<br>
@@ -215,4 +218,5 @@ Get logger instance. supprted options are as below.<br>
 
 | Param | Type | Description |
 | --- | --- | --- |
-| desc | <code>option</code> | Logger option. |
+| desc | <code>option</code> | Logger option |
+| mod | <code>option</code> | modulename to output |
