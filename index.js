@@ -152,7 +152,7 @@ class Logger {
     let lines = stacktrace.split('\n');
     lines.splice(0, 4);
 
-    let firstline = lines[0];
+    let firstline = lines[0].replace(/\\/g, "/");
     let index = firstline.lastIndexOf("/");
     return firstline.substr(index + 1);
   }
