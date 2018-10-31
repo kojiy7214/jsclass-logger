@@ -1,5 +1,14 @@
 const fs = require("fs");
 
+const dummy = {
+  debug: function() { return dummy },
+  info: function() { return dummy },
+  warn: function() { return dummy },
+  error: function() { return dummy },
+  trace: function() { return dummy },
+  assert: function() { return dummy }
+}
+
 /**
  * Logger class.
  */
@@ -77,10 +86,14 @@ class Logger {
     let log_content = timestamp + prefix + " (" + this.mod + "/" + lineinfo + msg;
     if (Logger.toFile) {
       let file = Logger.getFile();
-      fs.appendFileSync(file, log_content, "utf8", (error) => {});
+      fs.appendFileSync(file, "\n" + log_content, "utf8", (error) => {});
     } else {
       console.log(log_content);
     }
+  }
+
+  assert(cond) {
+    return cond ? this : dummy;
   }
 
   /**
@@ -94,6 +107,7 @@ class Logger {
     if (Logger.debug) {
       this.log(" DEBUG ", msg);
     }
+    return this;
   }
 
   /**
@@ -105,6 +119,7 @@ class Logger {
    */
   info(msg) {
     this.log(" INFO  ", msg);
+    return this;
   }
 
   /**
@@ -116,6 +131,7 @@ class Logger {
    */
   warn(msg) {
     this.log(" WARN  ", msg);
+    return this;
   }
 
   static getStackTrace() {
@@ -153,6 +169,7 @@ class Logger {
     let stacktrace = Logger.getStackTrace();
     msg = msg + "\n" + stacktrace;
     this.log(" TRACE ", msg);
+    return this;
   }
 
   /**
@@ -167,6 +184,7 @@ class Logger {
     let stacktrace = Logger.getStackTrace();
     msg = msg + "\n" + stacktrace;
     this.log(" ERROR ", msg);
+    return this;
   }
 }
 

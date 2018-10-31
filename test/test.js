@@ -1,10 +1,9 @@
 let fs = require('fs');
 let debug_logger = require("../../jsclass-logger")({
   "debug": true,
-  "toFile": true,
   "rotate": (file) => fs.statSync(file).size > 50000,
   "generation": 3,
-  "ts": "DD/MM/YYYY hh:mm:ss"
+  "toFile": true
 });
 let assert = require("assert");
 
@@ -45,6 +44,9 @@ describe('Logger', function() {
       debug_logger.info(cfunction);
       debug_logger.warn(cfunction);
       debug_logger.error(cfunction);
+
+      debug_logger.assert(false).info("DONT OUTPUT THIS");
+      debug_logger.assert(true).info("OUTPUT THIS");
     })
   })
 })
