@@ -1,6 +1,6 @@
 {
   "name": "jsclass-logger",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Logger which works perfectly both in production/debug environment.",
   "main": "index.js",
   "scripts": {
